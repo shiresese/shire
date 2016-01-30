@@ -1,0 +1,198 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 700px;
+  min-height: 480px;
+}
+a {
+  text-decoration: none;
+}
+.shire-content {
+  width: 100%;
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+}
+.shire-svg-block {
+  position: absolute;
+}
+.shire-ttable {
+  fill: none;
+  stroke: #f20d5e;
+}
+.shire-ttable-svg,
+.shire-wave-svg {
+  width: 100%;
+  height: 100%;
+}
+.shire-exit-svg,
+.shire-left-button-svg {
+  height: 100%;
+}
+.shire-ttable-block {
+  width: auto;
+  height: 100%;
+  min-height: 480px;
+  overflow: hidden;
+}
+.shire-menu-block {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+}
+.shire-wave-block {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1000;
+}
+.shire-exit-block,
+.shire-left-button-block {
+  height: 15%;
+  min-height: 72px;
+  overflow: hidden;
+  z-index: 1000;
+}
+@media screen and (min-height: 480px) {
+  .shire-exit-block,
+  .shire-left-button-block {
+    top: 42.5%;
+  }
+}
+@media screen and (max-height: 480px) {
+  .shire-exit-block,
+  .shire-left-button-block {
+    top: 204px;
+  }
+}
+.shire-content-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+.shire-news-block,
+.shire-works-block,
+.shire-about-block {
+  padding: 20px 20px;
+  margin: auto;
+  position: absolute;
+  height: calc(100% - 10px);
+  background-color: #fce8ef;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+.shire-title-wave {
+  stroke: #f20d5e;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shire-title-logo {
+  position: absolute;
+  bottom: 80px;
+  right: 10px;
+  font-size: xx-large;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shire-menu-element {
+  width: 200px;
+  position: fixed;
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+  z-index: 1000;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shire-menu-element:hover {
+  color: #f20d5e;
+  opacity: 0.5;
+}
+.shire-menu-active {
+  color: #f20d5e;
+}
+.shire-fill {
+  fill: white;
+}
+.shire-fill2 {
+  fill: #fce8ef;
+}
+.shire-pointer {
+  cursor: pointer;
+}
+.shire-mainfill {
+  fill: #f20d5e;
+}
+.shire-exit {
+  stroke: #f20d5e;
+  fill: white;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#shire-exit:hover > .shire-exit {
+  transform: translate(60px, 0px);
+}
+#ttable-groove {
+  transform-origin: 50% 50%;
+  animation: groove 60s linear infinite;
+}
+@keyframes groove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#ttable-surface {
+  transform-origin: 50% 50%;
+  animation: surface 360s linear infinite;
+}
+@keyframes surface {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.shire-left-side {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shire-panel {
+  padding: 5px 5px;
+  margin: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  background-color: white;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shire-news-block > .shire-panel {
+  width: calc(100% - 30px);
+  height: 100px;
+}
+.shire-works-block > .shire-panel {
+  width: 140px;
+  height: 230px;
+}
+.shire-about-block > .shire-panel {
+  width: calc(100% - 80px);
+  padding: 30px;
+}
+.shire-panel:hover {
+  -webkit-filter: brightness(120%);
+  -ms-filter: brightness(120%);
+  -moz-filter: brightness(120%);
+  filter: brightness(120%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.shire-about-block > .shire-panel:hover {
+  -webkit-filter: none;
+  -ms-filter: none;
+  -moz-filter: none;
+  filter: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}

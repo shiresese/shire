@@ -1,4 +1,5 @@
 var TransitionGroup = React.addons.TransitionGroup;
+var Config;
 
 $(function(){
 
@@ -77,7 +78,7 @@ $(function(){
             React.createElement("div", {className: "shire-content"}, 
               React.createElement(TurnTable, {blockWidth: ttableBlockWidth, left: this.state.left}), 
               React.createElement(Menu, {clickMenu: this.clickMenu, state: this.state.content, left: this.state.left}), 
-              React.createElement(Exit, {blockWidth: exitBlockWidth, left: this.state.left}), 
+              React.createElement(Exit, {blockWidth: exitBlockWidth, left: this.state.left, clickExit: this.clickExit}), 
               React.createElement(TransitionGroup, null, 
                 React.createElement(Top, {state: this.state.content, switchLeft: this.switchLeft})
               ), 
@@ -92,7 +93,7 @@ $(function(){
             React.createElement("div", {className: "shire-content"}, 
               React.createElement(TurnTable, {blockWidth: ttableBlockWidth, left: this.state.left}), 
               React.createElement(Menu, {clickMenu: this.clickMenu, state: this.state.content, left: this.state.left}), 
-              React.createElement(Exit, {blockWidth: exitBlockWidth, left: this.state.left}), 
+              React.createElement(Exit, {blockWidth: exitBlockWidth, left: this.state.left, clickExit: this.clickExit}), 
               React.createElement(TransitionGroup, null
               ), 
               React.createElement(TransitionGroup, null, 
@@ -106,7 +107,7 @@ $(function(){
             React.createElement("div", {className: "shire-content"}, 
               React.createElement(TurnTable, {blockWidth: ttableBlockWidth, left: this.state.left}), 
               React.createElement(Menu, {clickMenu: this.clickMenu, state: this.state.content, left: this.state.left}), 
-              React.createElement(Exit, {blockWidth: exitBlockWidth, left: this.state.left}), 
+              React.createElement(Exit, {blockWidth: exitBlockWidth, left: this.state.left, clickExit: this.clickExit}), 
               React.createElement(TransitionGroup, null
               ), 
               React.createElement(TransitionGroup, null
@@ -132,6 +133,9 @@ $(function(){
           this.setState({ content: EState.ABOUT });
           break;
       }
+    },
+    clickExit: function(){
+      location.href = Config.basePath;
     },
     switchLeft: function(state){
       // if(state != undefined){
@@ -223,7 +227,7 @@ $(function(){
       return (
         React.createElement("div", {className: "shire-svg-block shire-exit-block", style: {width:this.props.blockWidth}}, 
           React.createElement("svg", {className: "shire-exit-svg  shire-left-side", viewBox: "0 0 160 120", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLineJoin: "round", strokeMiterLimit: "1.41421", preserveAspectRatio: "xMinYMin slice", style: {transform:trans}}, 
-            React.createElement("g", {id: "shire-exit", pointerEvents: "all"}, 
+            React.createElement("g", {id: "shire-exit", pointerEvents: "all", onClick: this.props.clickExit}, 
               React.createElement("path", {className: "shire-exit", d: "M0 20,l50,50l-100,0z", strokeWidth: "1"}), 
               React.createElement("rect", {className: "shire-exit", x: "-50", y: "80", width: "100", height: "10", strokeWidth: "1"}), 
               React.createElement("rect", {className: "shire-exit shire-pointer", x: "-60", y: "0", width: "130", height: "120", fillOpacity: "0", strokeWidth: "0"})
@@ -484,10 +488,14 @@ $(function(){
         React.createElement("div", {className: "shire-about-block shire-content-sub", style: {width:this.props.width, left:this.props.left, opacity:0, top:"100%", transition: "all .5s cubic-bezier(.4,0,.2,1)"}}, 
           React.createElement("h1", null, " About "), 
           React.createElement("div", {className: "shire-panel"}, 
-            React.createElement("p", null, "Circle: しれせせ"), 
-            React.createElement("p", null, "HN: shire"), 
-            React.createElement("p", null, "Twitter: ", React.createElement("a", {href: "https://twitter.com/shire001"}, "@shire001")), 
-            React.createElement("p", null, "Contact: 7th.shire(at)gmail.com"), 
+            React.createElement("table", null, 
+              React.createElement("tbody", null, 
+                React.createElement("tr", null, React.createElement("td", {style: {width:"100px"}}, "Circle"), React.createElement("td", null, "しれせせ")), 
+                React.createElement("tr", null, React.createElement("td", null, "HN"), React.createElement("td", null, "shire")), 
+                React.createElement("tr", null, React.createElement("td", null, "Twitter"), React.createElement("td", null, React.createElement("a", {href: "https://twitter.com/shire001"}, "@shire001"))), 
+                React.createElement("tr", null, React.createElement("td", null, "Contact"), React.createElement("td", null, "7th.shire(at)gmail.com"))
+              )
+            ), 
             React.createElement("p", null, 
               React.createElement("iframe", {width: "100%", height: "450", scrolling: "no", frameBorder: "no", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/16396492&color=f20d5e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"})
             )

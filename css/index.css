@@ -163,6 +163,8 @@ a {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .shire-panel {
+  font-family: sans-serif;
+  font-size: 0.9em;
   padding: 5px 5px;
   margin: 5px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
@@ -195,4 +197,28 @@ a {
   -moz-filter: none;
   filter: none;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 5px;
+  background: #666;
+}
+::-webkit-scrollbar-piece {
+  background: #eee;
+}
+::-webkit-scrollbar-piece:start {
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(242, 13, 94, 0.2);
+}
+::-webkit-scrollbar-corner {
+  background: #333;
 }

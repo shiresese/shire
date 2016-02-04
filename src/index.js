@@ -228,6 +228,7 @@ $(function(){
         React.createElement("div", {className: "shire-svg-block shire-exit-block", style: {width:this.props.blockWidth}}, 
           React.createElement("svg", {className: "shire-exit-svg  shire-left-side", viewBox: "0 0 160 120", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLineJoin: "round", strokeMiterLimit: "1.41421", preserveAspectRatio: "xMinYMin slice", style: {transform:trans}}, 
             React.createElement("g", {id: "shire-exit", pointerEvents: "all", onClick: this.props.clickExit}, 
+              React.createElement("text", null, "srss"), 
               React.createElement("path", {className: "shire-exit", d: "M0 20,l50,50l-100,0z", strokeWidth: "1"}), 
               React.createElement("rect", {className: "shire-exit", x: "-50", y: "80", width: "100", height: "10", strokeWidth: "1"}), 
               React.createElement("rect", {className: "shire-exit shire-pointer", x: "-60", y: "0", width: "130", height: "120", fillOpacity: "0", strokeWidth: "0"})

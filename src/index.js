@@ -135,7 +135,11 @@ $(function(){
       }
     },
     clickExit: function(){
-      location.href = Config.basePath;
+      body.style.transition = "opacity 0.5s linear";
+      body.style.opacity = "0";
+      setTimeout(function(){
+        location.href = Config.basePath;
+      }, 500);
     },
     switchLeft: function(state){
       // if(state != undefined){

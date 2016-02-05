@@ -135,11 +135,11 @@ $(function(){
       }
     },
     clickExit: function(){
-      body.style.transition = "opacity 0.5s linear";
+      body.style.transition = "opacity 0.25s linear";
       body.style.opacity = "0";
       setTimeout(function(){
         location.href = Config.basePath;
-      }, 500);
+      }, 250);
     },
     switchLeft: function(state){
       // if(state != undefined){
